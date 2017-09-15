@@ -1,0 +1,2 @@
+module RailsEnumType
+end
