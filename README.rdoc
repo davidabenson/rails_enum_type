@@ -20,14 +20,39 @@ rake db:migrate
     type_item_view joins the type and type_item tables
     I.E.  select * from type_item_view where type = 'Color'
 
-= Example Color = [Red,Green,Blue] is preloaded as an example 
+= Example Color = [Red,Green,Blue] is preloaded as an example
+gem_test_dev=> select * from type;
+ id | name  | description
+----+-------+-------------
+  1 | Color |
+
+gem_test_dev=> select * from type_item;
+id | type_id | name  | description | sequence | sub_type
+----+---------+-------+-------------+----------+----------
+1 |       1 | Red   |             |      1.0 |
+2 |       1 | Green |             |      2.0 |
+3 |       1 | Blue  |             |      3.0 |
+
+gem_test_dev=> select * from type_item_view;
+type_id | type  | type_item_id | type_item | description | sequence
+---------+-------+--------------+-----------+-------------+----------
+   1 | Color |            1 | Red       |             |      1.0
+   1 | Color |            2 | Green     |             |      2.0
+   1 | Color |            3 | Blue      |             |      3.0
+
+app/model/color_type.rb
+class ColorType < ET::EnumType
+  class << self
+    ET::EnumType.load_type_items('Color', definer_method = method(:define_method), :sequence)
+  end
+end
 
 = Comparison Example
   house.color.id == ColorType.red.id
 
 = Looping example
   ColorType.items.each |color| do
-      Rails.logger.debug("#{color.id}, #{color.name{")
+      Rails.logger.debug("#{color.id}, #{color.name}")
   end
 
 
