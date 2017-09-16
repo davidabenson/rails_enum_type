@@ -1,4 +1,4 @@
-= Rails Enum Typew
+= Rails Enum Type
 
 I wanted a better way to manage common lists of simple data. More like the way enums work, but I wanted these lists managed in the database, not int code base. 
 Objectives:
