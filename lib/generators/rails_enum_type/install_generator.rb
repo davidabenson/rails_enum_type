@@ -21,11 +21,11 @@ module RailsEnumType
       end
 
       def copy_models
-        template "#{self.class.source_root}/../../models/type.rb", "app/models/type.rb"
-        template "#{self.class.source_root}/../../models/type_item.rb", "app/models/type_item.rb"
-        template "#{self.class.source_root}/../../models/enum_type.rb", "app/models/enum_type.rb"
-        template "#{self.class.source_root}/../../models/enum_item.rb", "app/models/enum_item.rb"
-        template "#{self.class.source_root}/../../models/color_type.rb", "app/models/color_type.rb"
+      #   template "#{self.class.source_root}/../../models/type.rb", "app/models/type.rb"
+      #   template "#{self.class.source_root}/../../models/type_item.rb", "app/models/type_item.rb"
+      #   template "#{self.class.source_root}/../../models/enum_type.rb", "app/models/enum_type.rb"
+      #   template "#{self.class.source_root}/../../models/enum_item.rb", "app/models/enum_item.rb"
+         template "#{self.class.source_root}/../../app/models/color_type.rb", "app/models/color_type.rb"
       end
 
     end
