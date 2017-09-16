@@ -1,15 +1,8 @@
-= MigrationView
+= Rails Enum Typew
 
-I wanted a better way to manage views.  More like the way liquibase does.  
+I wanted a better way to manage common lists of simple data. More like the way enums work, but I wanted these lists managed in the database, not int code base. 
 Objectives:
 
-1. Create view in standard rails migration.
-2. Have views saved in db/views/#{view}.sql file
-3. When view file is modified, reload the view after all other migrations are run.
-4. If view is deleted recreate it.
-5. If view deleted from other delete view x cascade.  recreate the deleted view.
-6. Have task to reload views,   rake db:reload:view 
-7. Natively support both postgres and mysql
 
 = Install
 
