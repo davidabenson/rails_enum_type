@@ -8,8 +8,8 @@ class Type < ActiveRecord::Base
   validates :name, presence: true, length: { maximum: 255 }, uniqueness: { case_sensitive: false }
   validates :description, length: { maximum: 255 }
   
-  def self.find_type_items_by_name(type_name)
-    find_by_name(type_name).type_items
+  def self.find_type_items_by_name(type_name, order=:name)
+    find_by_name(type_name).type_items.order(order)
   end
 
   def self.find_type_item_by_name(key, name)
