@@ -22,6 +22,10 @@ module ET
     def self.items
       return @@items
     end
+    
+    def self.all
+      return @@items
+    end
 
   end
 end
