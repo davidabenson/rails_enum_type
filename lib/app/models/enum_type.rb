@@ -26,6 +26,17 @@ module ET
     def self.all
       return @@items
     end
+    
+    def self.to_json()
+
+      a = []
+      @@items.each_with_object({}) do |enum_type|
+        a << {id: enum_type.id, name: enum_type.name}
+      end
+
+      return a.to_json.html_safe
+    end
+
 
   end
 end
