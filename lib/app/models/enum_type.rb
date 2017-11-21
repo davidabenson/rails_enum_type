@@ -1,42 +1,38 @@
 module ET
   class EnumType
-    @@items = []
-    def self.load_type_items(type_name, definer_method, order=:name)
-      if !@@items.empty?
-        return
-      end
+    class << self; class_attribute :item_list end
 
-      type_items = Type.find_type_items_by_name(type_name, order)
-      type_items.each do |item|
-        type_item = EnumItem.new({id: item.id, name: item.name,
-                                         sub_type: item.sub_type, description: item.description,
-                                         sequence: item.sequence})
+    def self.load_type_items(type_name, definer_method, order=:name)
+      item_list = []
+      items = ET::Type.find_by_type_name(type_name).order(order)
+      items.each do |item|
+        type_item = ET::EnumItem.new({id: item.id, name: "#{item.name}", sub_type: item.sub_type, sub_category: item.sub_category})
 
         definer_method.call(type_item.symbol) do
           return type_item
         end
-        @@items << type_item
+
+        item_list << type_item
       end
+      item_list
     end
 
-    def self.items
-      return @@items
+    def item_list
+      self.class.item_list
     end
-    
+
     def self.all
-      return @@items
+      return @item_list
     end
-    
-    def self.to_json()
 
+    def self.to_json()
       a = []
-      @@items.each_with_object({}) do |enum_type|
+      @item_list.each_with_object({}) do |enum_type|
         a << {id: enum_type.id, name: enum_type.name}
       end
 
       return a.to_json.html_safe
     end
-
 
   end
 end

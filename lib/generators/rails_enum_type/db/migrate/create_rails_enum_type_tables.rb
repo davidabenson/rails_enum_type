@@ -11,6 +11,7 @@ class CreateRailsEnumTypeTables < ActiveRecord::Migration
       t.string :description
       t.decimal :sequence
       t.string :sub_type
+      t.string :sub_category
     end
     add_index :type_item, :type_id
   end

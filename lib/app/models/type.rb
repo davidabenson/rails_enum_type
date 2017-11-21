@@ -9,14 +9,18 @@ module ET
     validates :name, presence: true, length: { maximum: 255 }, uniqueness: { case_sensitive: false }
     validates :description, length: { maximum: 255 }
 
-    def self.find_type_items_by_name(type_name, order=:name)
-      find_by_name(type_name).type_items.order(order)
+    def self.find_by_type_name(type_name)
+      ET::Type.find_by_name(type_name).type_items
     end
 
-    def self.find_type_item_by_name(key, name)
-      items = find_by_name(key).type_items.select { |i| i.name == name }
-      items.try(:first)
-    end
+    # def self.find_type_items_by_name(type_name, order=:name)
+    #   find_by_name(type_name).type_items.order(order)
+    # end
+    #
+    # def self.find_type_item_by_name(key, name)
+    #   items = find_by_name(key).type_items.select { |i| i.name == name }
+    #   items.try(:first)
+    # end
   end
 end
 
