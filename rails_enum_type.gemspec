@@ -9,9 +9,9 @@ Gem::Specification.new do |s|
   s.version = RailsEnumType::VERSION
   s.authors = ["davidabenson"]
   s.email = ["david_a_benson@yahoo.com"]
-  s.homepage = ""
-  s.summary = ""
-  s.description = ""
+  s.homepage = "https://github.com/davidabenson/rails_enum_type"
+  s.summary = "Enum list backed by a database"
+  s.description = "Enum list backed by a database"
   s.license = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
