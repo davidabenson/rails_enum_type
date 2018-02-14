@@ -59,7 +59,8 @@ end
       Rails.logger.debug("#{color.id}, #{color.name}")
   end
 
-= Note: Version 1, had some pretty big changes over version 0.0.1, Notably the TypeItem class is gone and replaced with the database model.
+= Note: Version 1, had some pretty big changes over version 0.0.1.
+Notably the TypeItem class is gone and replaced with the database model.
 This allows the EnumType derived class to have associations to other model objects
 
 This project rocks and uses MIT-LICENSE.
