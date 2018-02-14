@@ -1,9 +1,17 @@
-
 class ColorType < ET::EnumType
-  class << self
-    ColorType.item_list = ColorType.item_list = ET::EnumType.load_type_items('Color', definer_method = method(:define_method), :sequence)
+
+  TYPE_NAME = 'ColorType'
+
+  class << self;
+    class_attribute :type_name
+    self.type_name = TYPE_NAME
+    ET::EnumType.load_type_items(self.type_name, definer_method = method(:define_method))
   end
+
+  default_scope { where(type_id: ET::Type.find_by_name(self.type_name).id) }
+
 end
+
 
 
 
