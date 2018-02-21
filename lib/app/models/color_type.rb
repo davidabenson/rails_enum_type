@@ -10,6 +10,10 @@ class ColorType < ET::EnumType
 
   default_scope { where(type_id: ET::Type.find_by_name(self.type_name).id) }
 
+  def self.to_json(type_name = TYPE_NAME)
+    super
+  end
+
 end
 
 
