@@ -1,5 +1,6 @@
 module ET
   class TypeItem < ActiveRecord::Base
+    self.table_name = "type"
     belongs_to :type
 
     # VALIDATION

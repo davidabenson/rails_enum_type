@@ -1,5 +1,6 @@
 module ET
   class Type < ActiveRecord::Base
+    self.table_name = "type"
     has_many :type_items
 
     accepts_nested_attributes_for :type_items, :reject_if => :all_blank, :allow_destroy => true
