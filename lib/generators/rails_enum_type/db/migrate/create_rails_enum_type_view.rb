@@ -16,10 +16,10 @@ class CreateRailsEnumTypeView < ActiveRecord::Migration
 
   execute sql
 
-  type = Type.new(name: 'Color')
-  red_item = TypeItem.new(name: 'Red', sequence: 1)
-  green_item = TypeItem.new(name: 'Green', sequence: 2)
-  blue_item = TypeItem.new(name: 'Blue', sequence: 3)
+  type = ET::Type.new(name: 'ColorType')
+  red_item = ET::TypeItem.new(name: 'Red', sequence: 1)
+  green_item = ET::TypeItem.new(name: 'Green', sequence: 2)
+  blue_item = ET::TypeItem.new(name: 'Blue', sequence: 3)
 
   type.type_items << red_item
   type.type_items << green_item
