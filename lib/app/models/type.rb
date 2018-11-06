@@ -1,5 +1,5 @@
 module ET
-  class Type < Model::Versioned
+  class Type < ActiveRecord::Base
     self.table_name = "type"
     has_many :type_items
 

@@ -1,5 +1,5 @@
 module ET
-  class TypeItem < Model::Versioned
+  class TypeItem < ActiveRecord::Base
     self.table_name = "type_item"
     belongs_to :type
 
