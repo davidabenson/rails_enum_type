@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../GemTest/.idea/GemTest.iml" filepath="$PROJECT_DIR$/../GemTest/.idea/GemTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../migration_view/.idea/migration_view.iml" filepath="$PROJECT_DIR$/../migration_view/.idea/migration_view.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/rails_enum_type.iml" filepath="$PROJECT_DIR$/.idea/rails_enum_type.iml" />
       <module fileurl="file://$PROJECT_DIR$/../rails_migration_plus/.idea/rails_migration_plus.iml" filepath="$PROJECT_DIR$/../rails_migration_plus/.idea/rails_migration_plus.iml" />
     </modules>

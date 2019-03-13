@@ -1,4 +1,4 @@
-class CreateRailsEnumTypeView < ActiveRecord::Migration
+class CreateRailsEnumTypeView < ActiveRecord::Migration[4.2]
   sql=<<-SQL_CODE
       create or replace view type_item_view as
         SELECT 

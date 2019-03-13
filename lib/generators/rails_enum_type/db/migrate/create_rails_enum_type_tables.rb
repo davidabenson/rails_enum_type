@@ -1,4 +1,4 @@
-class CreateRailsEnumTypeTables < ActiveRecord::Migration
+class CreateRailsEnumTypeTables < ActiveRecord::Migration[4.2]
   def change
     create_table :type do |t|
       t.string :name, null: false
