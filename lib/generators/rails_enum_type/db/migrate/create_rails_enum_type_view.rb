@@ -7,7 +7,9 @@ class CreateRailsEnumTypeView < ActiveRecord::Migration[4.2]
         ti.id AS type_item_id,
         ti.name AS type_item,
         ti.description,
-        ti.sequence
+        ti.sequence,
+        ti.sub_type,
+        ti.sub_category
    FROM type t, type_item ti
   WHERE ti.type_id = t.id
   ORDER BY ti.sequence;
