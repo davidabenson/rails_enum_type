@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     rails_enum_type (1.0.3)
-      rails (> 6.0.0)
+      rails (>= 6.1.6)
 
 GEM
   remote: http://rubygems.org/
