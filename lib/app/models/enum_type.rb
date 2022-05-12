@@ -27,7 +27,7 @@ module ET
     def self.to_json(type_name)
       a = []
       items = Model::Type.find_by_type_name(type_name)
-      puts items
+      # puts items
       items.each do |enum_type|
         a << {id: enum_type.id, name: enum_type.name}
       end
